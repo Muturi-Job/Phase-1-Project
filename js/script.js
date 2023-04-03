@@ -185,8 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         const playerInput = document.getElementById('player-input')
         const playerName = playerInput.value;
-   
-        fetch(`https://www.balldontlie.io/api/v1/players?search=${playerName}`)
+           fetch(`https://www.balldontlie.io/api/v1/players?search=${playerName}`)
             .then (res => res.json())
             .then ((data) => {
                 displaySpecificPlayer(data)
