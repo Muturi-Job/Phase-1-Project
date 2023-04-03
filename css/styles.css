@@ -37,6 +37,9 @@ nav a:hover {
 #inputDiv {
     display: none;
 }
+#player-input-div{
+    display: none;
+}
 
 #outputDiv {
     margin-top: 20px;
