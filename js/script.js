@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const teamsSection = document.getElementById('teams')
 const displayAllTeamsButton = document.getElementById('Display-all-teams');
 const chooseSpecificTeamButton = document.getElementById('Choose-specific-team');
-const teamInput = document.getElementById('team-input')
-const teamName = teamInput.value;
+const teamInput = document.getElementById('team-input').value
+const teamId = teamInput.value;
 //Fetches the data of all the teams from the API server then displays it
 function fetchAllTeams () {
     fetch('https://www.balldontlie.io/api/v1/teams')
@@ -40,17 +40,18 @@ function displayAllTeams(data) {
 }
 displayAllTeamsButton.addEventListener('click', fetchAllTeams)
 
-//Fetches the data for a specific team
+//Fetches the data for a specific team using its ID
 
 chooseSpecificTeamButton.addEventListener('click',() => {
     inputDiv.style.display = "block";
 });
 submitBtn.addEventListener("click", () => {
     
-    fetch(`https://www.balldontlie.io/api/v1/teams?search=${teamName}`)
+    fetch(`https://www.balldontlie.io/api/v1/teams/${teamInput}`)
         .then(res => res.json())
         .then(data => {
-         console.log(data.data)
+        console.log(data)
+        displayAllTeams(data);
             })
            .catch(error => console.log(error));
     })
