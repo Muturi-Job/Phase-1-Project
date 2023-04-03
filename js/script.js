@@ -227,10 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
         downvotes++;
         downvoteCount.textContent = downvotes;
     });
-
-        })
-        
-    }
+      })
+ }
 
 
 
