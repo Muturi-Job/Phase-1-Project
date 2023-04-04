@@ -267,6 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
     downvoteButton.addEventListener('click', () => {
         downvotes++;
         downvoteCount.textContent = downvotes;
+        
     });
       })
  }
