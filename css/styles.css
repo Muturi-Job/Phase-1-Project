@@ -1,7 +1,12 @@
 body {
+    background-image: url("bulb.jpg"); 
+    background-size: cover;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    color: whitesmoke;
+    
+   
 }
 nav {
     background-color: #333;
@@ -43,4 +48,40 @@ nav a:hover {
 
 #outputDiv {
     margin-top: 20px;
+}
+#teams {
+    /* background-color: #CD8B76; */
+
+}
+button{
+    padding: 10px;
+    margin: 2%;
+}
+#teams div input {
+    height: 150px;
+    width: 350px;
+    
+}
+#players div input {
+    height: 150px;
+    width: 350px;
+    
+}
+#teams div{
+    margin-left: 1.5%;
+    border-radius: 25px;
+    padding-bottom: 10px;    
+}
+#players div{
+    margin-left: 1.5%;
+    border-radius: 25px;
+    padding-bottom: 10px;    
+}
+#teams form input {
+    height: 30px;
+    width: 150px;
+}
+#players form input {
+    height: 30px;
+    width: 150px;
 }

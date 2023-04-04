@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             teamCity.textContent = `City: ${data.city}`;
             dataContainer.appendChild(teamCity);
             const teamConference = document.createElement('p');
-            teamConference.textContent = `Conference; ${data.conference}`;
+            teamConference.textContent = `Conference: ${data.conference}`;
             dataContainer.appendChild(teamConference);
             const teamDivision = document.createElement('p');
             teamDivision.textContent = `Division: ${data.division}`;
@@ -241,7 +241,20 @@ document.addEventListener('DOMContentLoaded', () => {
     commentSubmit.setAttribute('type', 'submit');
     commentSubmit.addEventListener("click", () => {
         event.preventDefault();
-        const comment = commentInput.value;
+        const comment = {
+           comment: commentInput.value
+        }
+        fetch(`https://www.balldontlie.io/api/v1/players?search=${playerName}`, {
+            method: 'POST',
+            body: JSON.stringify(comment),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
+
     })
             
             //Upvote and Downvote Button
@@ -267,20 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
     downvoteButton.addEventListener('click', () => {
         downvotes++;
         downvoteCount.textContent = downvotes;
-        
+
     });
       })
  }
- //Comment input fields
-    function handleCommentInput () {
-        const commentInput = document.createElement('input');
-        commentInput.setAttribute('type', 'text');
-        commentInput.setAttribute('placeholder', 'Add a comment');
-        dataContainer.appendChild(commentInput);
-        const commentSubmit =document.createElement('ipnut');
-        commentSubmit.setAttribute('type', 'submit');
-        commentSubmit.addEventListener("click", () => {
-            event.preventDefault();
-            const comment = commentInput.value;
-        })
-    }
+ 
