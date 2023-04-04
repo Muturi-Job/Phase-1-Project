@@ -41,6 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
             teamDivision.textContent = `Division: ${data.division}`;
             dataContainer.appendChild(teamDivision);
             teamsSection.appendChild(dataContainer);
+                //Add comment input
+    const commentInput = document.createElement('input');
+    commentInput.setAttribute('type', 'text');
+    commentInput.setAttribute('placeholder', 'Add a comment');
+    dataContainer.appendChild(commentInput);
+    const commentSubmit =document.createElement('ipnut');
+    commentSubmit.setAttribute('type', 'submit');
+    commentSubmit.addEventListener("click", () => {
+        event.preventDefault();
+        const comment = commentInput.value;
+    })
             //Upvote and Downvote Button
     const upvoteButton = document.createElement('button');
     upvoteButton.textContent = '👍';
@@ -53,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         upvotes++;
         upvoteCount.textContent = upvotes;
     });
-
     const downvoteButton = document.createElement('button');
     downvoteButton.textContent = '👎';
     dataContainer.appendChild(downvoteButton);
@@ -65,9 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         downvotes++;
         downvoteCount.textContent = downvotes;
     });
-
-
-        });
+         });
     }
     displayAllTeamsButton.addEventListener('click', fetchAllTeams)
 //Fetches the data for a specific team using its ID
@@ -100,6 +108,17 @@ document.addEventListener('DOMContentLoaded', () => {
         teamDivision.textContent = `Division: ${data.division}`;
         dataContainer.appendChild(teamDivision);
         teamsSection.appendChild(dataContainer);
+            //Add comment input
+    const commentInput = document.createElement('input');
+    commentInput.setAttribute('type', 'text');
+    commentInput.setAttribute('placeholder', 'Add a comment');
+    dataContainer.appendChild(commentInput);
+    const commentSubmit =document.createElement('ipnut');
+    commentSubmit.setAttribute('type', 'submit');
+    commentSubmit.addEventListener("click", () => {
+        event.preventDefault();
+        const comment = commentInput.value;
+    })
         //Upvote and Downvote Button
     const upvoteButton = document.createElement('button');
     upvoteButton.textContent = '👍';
@@ -149,6 +168,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const playerHeight = document.createElement('p');
             dataContainer.appendChild(playerHeight);
             playersSection.appendChild(dataContainer);
+                //Add comment input
+    const commentInput = document.createElement('input');
+    commentInput.setAttribute('type', 'text');
+    commentInput.setAttribute('placeholder', 'Add a comment');
+    dataContainer.appendChild(commentInput);
+    const commentSubmit =document.createElement('ipnut');
+    commentSubmit.setAttribute('type', 'submit');
+    commentSubmit.addEventListener("click", () => {
+        event.preventDefault();
+        const comment = commentInput.value;
+    })
             //Upvote and Downvote Button
         const upvoteButton = document.createElement('button');
         upvoteButton.textContent = '👍';
@@ -202,6 +232,18 @@ document.addEventListener('DOMContentLoaded', () => {
             currentTeam.textContent = `Current Team: ${data.team.full_name}`;
             dataContainer.appendChild(currentTeam);
             playersSection.appendChild(dataContainer);
+    //Add comment input
+    const commentInput = document.createElement('input');
+    commentInput.setAttribute('type', 'text');
+    commentInput.setAttribute('placeholder', 'Add a comment');
+    dataContainer.appendChild(commentInput);
+    const commentSubmit =document.createElement('ipnut');
+    commentSubmit.setAttribute('type', 'submit');
+    commentSubmit.addEventListener("click", () => {
+        event.preventDefault();
+        const comment = commentInput.value;
+    })
+            
             //Upvote and Downvote Button
     const upvoteButton = document.createElement('button');
     upvoteButton.textContent = '👍';
@@ -228,12 +270,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
       })
  }
-
-
-
-
-
-    
-
-
-
+ //Comment input fields
+    function handleCommentInput () {
+        const commentInput = document.createElement('input');
+        commentInput.setAttribute('type', 'text');
+        commentInput.setAttribute('placeholder', 'Add a comment');
+        dataContainer.appendChild(commentInput);
+        const commentSubmit =document.createElement('ipnut');
+        commentSubmit.setAttribute('type', 'submit');
+        commentSubmit.addEventListener("click", () => {
+            event.preventDefault();
+            const comment = commentInput.value;
+        })
+    }
