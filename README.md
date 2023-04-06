@@ -50,6 +50,9 @@ Basketball Data API (https://api.basketballdata.com)
 # License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
+#Live Git-hub link
+https://muturi-job.github.io/Phase-1-Project/
+
 
 
 
