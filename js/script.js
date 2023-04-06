@@ -52,8 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
             dataContainer.appendChild(commentSubmit)
             commentSubmit.addEventListener("click", () => {
                 event.preventDefault();
+                
                 const comment = commentInput.value;
-                fetch(`https://www.balldontlie.io/api/v1/players?search=${playerName}`, {
+                fetch(`https://www.balldontlie.io/api/v1/teams`, {
                     method: 'POST',
                     body: JSON.stringify(comment),
                     headers: {
@@ -63,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(res => res.json())
                     .then(data => console.log(data))
                     .catch(error => console.log(error))
+                    commentInput.value = ' ';
             })
             //Upvote and Downvote Button
             const upvoteButton = document.createElement('button');
@@ -132,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         commentSubmit.addEventListener("click", () => {
             event.preventDefault();
             const comment = commentInput.value;
-            fetch(`https://www.balldontlie.io/api/v1/players?search=${playerName}`, {
+            fetch(`https://www.balldontlie.io/api/v1/teams/${teamId}`, {
                 method: 'POST',
                 body: JSON.stringify(comment),
                 headers: {
@@ -142,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(res => res.json())
                 .then(data => console.log(data))
                 .catch(error => console.log(error))
+                commentInput.value ='';
         })
         //Upvote and Downvote Button
         const upvoteButton = document.createElement('button');
@@ -214,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(res => res.json())
                     .then(data => console.log(data))
                     .catch(error => console.log(error))
+                    commentInput.value ='';
             })
             //Upvote and Downvote Button
             const upvoteButton = document.createElement('button');
@@ -292,6 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(res => res.json())
                     .then(data => console.log(data))
                     .catch(error => console.log(error))
+                    commentInput.value ='';
 
             })
             //Upvote and Downvote Button
