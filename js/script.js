@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(res => res.json())
                     .then(data => console.log(data))
                     .catch(error => console.log(error))
-                    commentInput.value = ' ';
             })
             //Upvote and Downvote Button
             const upvoteButton = document.createElement('button');
