@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Gets the HTML elements
     const teamsSection = document.getElementById('teams-output-div');
-    const playersSection = document.getElementById('players')
+    const playersSection = document.getElementById('players');
     const displayAllTeamsButton = document.getElementById('Display-all-teams');
     const chooseSpecificTeamButton = document.getElementById('Choose-specific-team');
     const submitBtn = document.getElementById('submit-button')
